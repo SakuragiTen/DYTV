@@ -7,9 +7,51 @@
 //
 
 import UIKit
+private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
 
+    //懒加载属性
+    fileprivate lazy var pageTieleView : PageTitleView = {[weak self] in
+        let frame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐", "游戏", "娱乐", "趣玩"]
+        let titleView = PageTitleView(frame: frame, titles: titles)
+//        titleView.backgroundColor = UIColor.cyan;
+        titleView.delegate = self
+        return titleView
+    }()
+    
+    fileprivate lazy var pageContentView : PageContentView = {[weak self] in
+        var childVcs = [UIViewController]()
+        let recommend = RecommendViewController()
+        recommend.view.backgroundColor = UIColor.cyan
+        
+        let game = UIViewController()
+        game.view.backgroundColor = UIColor.red
+        
+        let amuse = UIViewController()
+        amuse.view.backgroundColor = UIColor.blue
+        
+        let funny = UIViewController()
+        funny.view.backgroundColor = UIColor.purple
+        
+        childVcs.append(recommend)
+        childVcs.append(game)
+        childVcs.append(amuse)
+        childVcs.append(funny)
+        
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabBarH
+        
+        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
+        
+        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        
+        contentView.delegate = self
+        
+        return contentView
+    }()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +73,16 @@ extension HomeViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         
+        //设置导航栏
         setupNavigationBar()
+        
+        //添加titleView
+        view.addSubview(pageTieleView)
+        
+        //添加contentView
+        view.addSubview(pageContentView)
+        
+        pageContentView.backgroundColor = UIColor.orange
     }
     
     fileprivate func setupNavigationBar() {
@@ -70,9 +121,18 @@ extension HomeViewController {
 }
 
 
+//Mark - 遵守PageTitleViewDelegate 
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(titleView: PageTitleView, selectIndex: Int) {
+        pageContentView.scrollToIndex(index: selectIndex)
+    }
+}
 
-
-
+extension HomeViewController : PageContentViewDelegate {
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTieleView.setCurrentTitle(sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
+    }
+}
 
 
 
