@@ -27,6 +27,12 @@
 		3C75578F1DEEFCD9008DE785 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C75578E1DEEFCD9008DE785 /* PageContentView.swift */; };
 		3C80802A1E05286C001517A3 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8080291E05286C001517A3 /* NetworkTools.swift */; };
 		3C80802C1E052930001517A3 /* RecommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80802B1E052930001517A3 /* RecommentViewModel.swift */; };
+		3CD3C7D31E246C2C00914B30 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7D21E246C2C00914B30 /* NSDate-Extension.swift */; };
+		3CD3C7E01E2511F500914B30 /* BaseGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7DD1E2511F500914B30 /* BaseGameModel.swift */; };
+		3CD3C7E11E2511F500914B30 /* AnchorGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7DE1E2511F500914B30 /* AnchorGroupModel.swift */; };
+		3CD3C7E21E2511F500914B30 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7DF1E2511F500914B30 /* AnchorModel.swift */; };
+		3CD3C7E81E25169900914B30 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7E71E25169900914B30 /* BaseViewModel.swift */; };
+		3CD3C7EA1E25239700914B30 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3C7E91E25239700914B30 /* CollectionBaseCell.swift */; };
 		7465E82B00B08B987BB54BBC /* Pods_DYTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0149EF9040A384C0B1AFBFE7 /* Pods_DYTV.framework */; };
 		B0D54A771DAB3D5B00CBCDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D54A761DAB3D5B00CBCDF2 /* AppDelegate.swift */; };
 		B0D54A7C1DAB3D5B00CBCDF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D54A7A1DAB3D5B00CBCDF2 /* Main.storyboard */; };
@@ -58,6 +64,12 @@
 		3C75578E1DEEFCD9008DE785 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		3C8080291E05286C001517A3 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		3C80802B1E052930001517A3 /* RecommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommentViewModel.swift; sourceTree = "<group>"; };
+		3CD3C7D21E246C2C00914B30 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		3CD3C7DD1E2511F500914B30 /* BaseGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameModel.swift; sourceTree = "<group>"; };
+		3CD3C7DE1E2511F500914B30 /* AnchorGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroupModel.swift; sourceTree = "<group>"; };
+		3CD3C7DF1E2511F500914B30 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		3CD3C7E71E25169900914B30 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		3CD3C7E91E25239700914B30 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
 		B0D54A731DAB3D5A00CBCDF2 /* DYTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D54A761DAB3D5B00CBCDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D54A7B1DAB3D5B00CBCDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,6 +277,9 @@
 		3C41C3EF1DD839C500B2CC7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3CD3C7DD1E2511F500914B30 /* BaseGameModel.swift */,
+				3CD3C7DE1E2511F500914B30 /* AnchorGroupModel.swift */,
+				3CD3C7DF1E2511F500914B30 /* AnchorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +293,7 @@
 				3C54889F1DFD285600A0AD71 /* CollectionNormalCell.xib */,
 				3C5488A21DFD2C4D00A0AD71 /* CollectionPrettyCell.swift */,
 				3C5488A31DFD2C4D00A0AD71 /* CollectionPrettyCell.xib */,
+				3CD3C7E91E25239700914B30 /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 		3C41C3F11DD839C500B2CC7A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3CD3C7E71E25169900914B30 /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -323,6 +340,7 @@
 			children = (
 				3C41C3FB1DD8482400B2CC7A /* UIBarButtonItem_Extension.swift */,
 				3C534DDF1DFC3EDD00B3C717 /* UIColor-Extension.swift */,
+				3CD3C7D21E246C2C00914B30 /* NSDate-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -506,15 +524,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D54A771DAB3D5B00CBCDF2 /* AppDelegate.swift in Sources */,
+				3CD3C7E81E25169900914B30 /* BaseViewModel.swift in Sources */,
 				3C54889C1DFD202400A0AD71 /* CollectionHeaderView.swift in Sources */,
+				3CD3C7E21E2511F500914B30 /* AnchorModel.swift in Sources */,
 				3C534DE01DFC3EDD00B3C717 /* UIColor-Extension.swift in Sources */,
 				3C5488991DFD0A2F00A0AD71 /* RecommendViewController.swift in Sources */,
 				3C41C3F71DD83DB500B2CC7A /* MainViewController.swift in Sources */,
+				3CD3C7E01E2511F500914B30 /* BaseGameModel.swift in Sources */,
 				3C290BA01DEAD18500B51D54 /* common.swift in Sources */,
 				3C75578F1DEEFCD9008DE785 /* PageContentView.swift in Sources */,
+				3CD3C7EA1E25239700914B30 /* CollectionBaseCell.swift in Sources */,
+				3CD3C7E11E2511F500914B30 /* AnchorGroupModel.swift in Sources */,
 				3C5148981DEACA5D00F03E58 /* PageTitleView.swift in Sources */,
 				3C41C3FC1DD8482400B2CC7A /* UIBarButtonItem_Extension.swift in Sources */,
 				3C5488A41DFD2C4D00A0AD71 /* CollectionPrettyCell.swift in Sources */,
+				3CD3C7D31E246C2C00914B30 /* NSDate-Extension.swift in Sources */,
 				3C5488A01DFD285600A0AD71 /* CollectionNormalCell.swift in Sources */,
 				3C80802A1E05286C001517A3 /* NetworkTools.swift in Sources */,
 				3C41C3FE1DD84CAF00B2CC7A /* HomeViewController.swift in Sources */,

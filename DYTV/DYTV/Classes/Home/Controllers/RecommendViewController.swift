@@ -53,7 +53,7 @@ class RecommendViewController: UIViewController {
         setupUI()
         
         
-    
+        loadData()
         
     }
     
@@ -70,7 +70,11 @@ extension RecommendViewController {
 //MARK: - 请求数据
 extension RecommendViewController {
     fileprivate func loadData() {
-        recommentVM.requestData()
+        recommentVM.requestData {
+            self.collectionView.reloadData()
+            var groups = self.recommentVM.anchorGroups
+            
+        }
     }
 }
 
@@ -78,12 +82,12 @@ extension RecommendViewController {
 extension RecommendViewController : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return self.recommentVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 8
+            return self.recommentVM.anchorGroups[0].anchors.count
         }
         
         return 4
@@ -96,7 +100,9 @@ extension RecommendViewController : UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+            
+            cell.anchor = self.recommentVM.anchorGroups[indexPath.section].anchors[indexPath.item]
             
             return cell
         }

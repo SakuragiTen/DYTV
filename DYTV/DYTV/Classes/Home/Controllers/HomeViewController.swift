@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
@@ -54,7 +56,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        Alamofire.request("http://capi.douyucdn.cn/api/v1/getbigDataRoom", method : .get, parameters: ["time" : Date.getCurrentTime()]).responseJSON { (response) in
+//            guard let result = response.result.value else {
+//                
+//                print("erro : \(response.result.error)")
+//                return
+//            }
+//            print("resulf = \(result) ")
+//            
+//        }
         setupUI()
     }
 

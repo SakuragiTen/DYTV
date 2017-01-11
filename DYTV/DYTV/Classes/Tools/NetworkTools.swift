@@ -16,7 +16,7 @@ enum MethodType {
 }
 
 class NetworkTools {
-    class func requestData(url : String, type : MethodType, parameters : [String : NSString]? = nil, finishedCallBack : @escaping (_ result : AnyObject) -> ()) {
+    class func requestData(url : String, type : MethodType, parameters : [String : Any]? = nil, finishedCallBack : @escaping (_ result : AnyObject) -> ()) {
         
         let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
         
@@ -24,7 +24,7 @@ class NetworkTools {
         
         Alamofire.request(url, method : method, parameters : parameters).responseJSON { (response) in
             guard let results = response.result.value else {
-                print(response.result.error)
+                print(response.result.error ?? "error")
                 return
             }
             finishedCallBack(results as AnyObject)
